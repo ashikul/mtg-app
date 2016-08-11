@@ -1,18 +1,19 @@
-<!--
-  Generated template for the CardListPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>CardList</ion-title>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Test Card List</ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let card of cards">
 
-<ion-content padding>
+        <img src={{card.editions[0].image_url}}>
+
+    </button>
+  </ion-list>
 
 </ion-content>
