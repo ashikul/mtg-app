@@ -1,19 +1,46 @@
 <ion-header>
-  <ion-navbar>
-    <button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Test Card List</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Test Card List</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let card of cards">
 
-        <img src={{card.editions[0].image_url}}>
+    <ion-list>
+        <ion-item-sliding  #item *ngFor="let card of cards">
+            <ion-item  >
 
-    </button>
-  </ion-list>
+                <ion-card>
+                    <img src={{card.editions[0].image_url}}>
+                </ion-card>
+            </ion-item>
+            <!--<ion-item>-->
+
+            <!--<ion-card>-->
+            <!--<img src="https://image.deckbrew.com/mtg/multiverseid/414412.jpg" alt="">-->
+            <!--</ion-card>-->
+            <!--</ion-item>-->
+            <!--<ion-item-options side="left">-->
+                <!--&lt;!&ndash;<button expandable (click)="saveItem(item)">&ndash;&gt;-->
+                <!--&lt;!&ndash;<ion-icon name="star"></ion-icon>&ndash;&gt;-->
+                <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                <!--<button (click)="console.log('hello!')">Favorite</button>-->
+                <!--<button danger (click)="share(item)">Share</button>-->
+                 <!---->
+
+            <!--</ion-item-options>-->
+
+            <ion-item-options side="right">
+                <button dark  (click)="unread(item)"><ion-icon name="bookmark"></ion-icon>Archive</button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
 </ion-content>

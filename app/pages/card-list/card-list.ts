@@ -41,4 +41,17 @@ export class CardListPage {
         //
 
     }
+
+    doInfinite(infiniteScroll) {
+        console.log('Begin async operation');
+
+        setTimeout(() => {
+            // for (var i = 0; i < 30; i++) {
+            //     this.items.push( this.items.length );
+            // }
+
+            console.log('Async operation has ended');
+            infiniteScroll.complete();
+        }, 500);
+    }
 }
