@@ -14,7 +14,7 @@ import {DeckBrewService} from "../../providers/deck-brew-service/deck-brew-servi
 })
 export class CardListPage {
     // cards:Array<any>;
-    cards : any[];
+    cards:any[];
 
     page:number;
 
@@ -56,7 +56,7 @@ export class CardListPage {
                     infiniteScroll.enable(false);
                 } else {
                     console.log('pushing cards!');
-                    // this.cards.pop();
+                    // this.cards.pop();4
 
                     console.log(this.cards.length);
                     this.cards = this.cards.concat(data);
